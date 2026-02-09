@@ -1,0 +1,14 @@
+# IDE (PyCharm/VS Code) dosyaları
+.idea/
+.vscode/
+
+# Python derleme dosyaları
+__pycache__/
+*.pyc
+
+# İşletim sistemi dosyaları
+.DS_Store
+Thumbs.db
+
+.venv/
+.Student2.csv
