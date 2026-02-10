@@ -33,13 +33,23 @@ An analytical ecosystem designed to enhance academic visibility through stochast
 
 ## Future Roadmap
 
-### Phase 3: Population Analytics & Visualization (In Progress)
-* Generating **KDE (Kernel Density Estimate)** plots and histograms to visualize the university-wide performance distribution.
-* Comparative analysis of success rates across different faculties using Box Plots.
+### Phase 3: Population Analytics & Visualization (Completed) 
+* **University-Wide Distribution:** Generated a **KDE (Kernel Density Estimate)** and Histogram to visualize the academic "Bell Curve" across 10,000 students.
+* **Comparative Insights:** Utilized **Box Plots** to analyze performance variance between different faculties (e.g., Software vs. Psychology).
+* **Statistical Anchoring:** Integrated mean and median markers to identify systemic trends and potential "clipping" effects in grading.
 
-### Phase 4: Predictive Modeling (Machine Learning)
-* Training a **Linear Regression** model $$y = \beta_0 + \beta_1x + \epsilon$$ to identify the correlation between student ability and final academic outcomes.
+### Phase 4: Predictive Modeling (Completed) 🚀
+* **Model Selection:** Implemented a **Multiple Linear Regression** model using `scikit-learn`.
+* **Feature Engineering:** Leveraged 30+ academic variables (course grades) to predict the outcome of high-stakes courses (e.g., CMSE423).
+* **Performance Metrics:** Achieved a robust **R-Squared ($R^2$) score of 72.16%**, demonstrating high predictive accuracy despite intentional stochastic noise.
+* **Residual Analysis:** Analyzed Mean Squared Error (MSE: 0.3277) to ensure the model's reliability across 10,000+ synthetic profiles.
 
+---
+
+##  ML Performance Insight
+*The scatter plot below visualizes the high correlation between our model's predictions and actual synthetic outcomes:*
+
+![ML Prediction Results](ml_prediction_results.png)
 ### Phase 5: Monte Carlo Risk Assessment
 * Simulating 10,000+ scenarios to calculate the probability of a student falling below the critical **2.00 CGPA** threshold.
 
