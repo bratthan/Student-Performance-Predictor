@@ -6,7 +6,7 @@ import matplotlib
 matplotlib.use('Agg')
 
 
-targetFile = "realistic_students.csv"  # "Student1.csv" "synthetic_Students.csv" veya olarak da değiştirilebilir
+targetFile = "Student1.csv"  # "Student1.csv" "synthetic_Students.csv" veya olarak da değiştirilebilir
 df = pd.read_csv(targetFile, encoding='latin1')
 
 gradeDict = {'A': 4.0, 'A-': 3.7, 'B+': 3.3, 'B': 3.0, 'B-': 2.7,
@@ -66,7 +66,7 @@ dfCollumns["Cr"] = pd.to_numeric(dfCollumns["Cr"])
 dfCollumns["Ch"] = dfCollumns["Cr"] * dfCollumns["Puan"]
 dfSimule = dfCollumns.copy()
 target_course = 'CMSE423'
-new_grade_letter = 'D'
+new_grade_letter = 'D+'
 if target_course in dfSimule['Crs.Code'].values:
     dfSimule.loc[dfSimule['Crs.Code'] == target_course, ' Summary'] = f"{target_course} {new_grade_letter}"
     dfSimule.loc[dfSimule['Crs.Code'] == target_course, 'Puan'] = gradeDict[new_grade_letter]
@@ -93,4 +93,6 @@ plt.title('Situation: Current vs. Simulation')
 plt.ylabel('CGPA')
 plt.legend()
 plt.savefig('analysisGPA.png')
-print("Graph 'analysisGPA.png' saved with detailed labels.")
+print("Graph 'analysisGPA.png' saved with detailed labels."),
+
+print(dfCollumns)
