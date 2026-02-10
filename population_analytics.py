@@ -3,7 +3,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("synthetic_Students.csv")
+df = pd.read_csv("realistic_students.csv")
 creditMap={
 "CMSE107": 4, "MATH163": 3, "ENGL191": 3, "MATH151": 4, "PHYS101": 4, "CMSE100": 0, "CMSE112": 4, "ENGL192": 3, "MATH152": 4, "PHYS102": 4,
 "HIST280": 2, "CMSE201": 4, "CMSE211": 4, "CMSE231": 4, "MATH241": 4, "CHEM101": 4, "CMSE222": 4, "CMSE242": 4, "MATH373": 3, "ENGL201": 3,

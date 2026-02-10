@@ -6,7 +6,7 @@ import matplotlib
 matplotlib.use('Agg')
 
 
-targetFile = "Student1.csv"  # "Student1.csv" "synthetic_Students.csv" veya olarak da değiştirilebilir
+targetFile = "realistic_students.csv"  # "Student1.csv" "synthetic_Students.csv" veya olarak da değiştirilebilir
 df = pd.read_csv(targetFile, encoding='latin1')
 
 gradeDict = {'A': 4.0, 'A-': 3.7, 'B+': 3.3, 'B': 3.0, 'B-': 2.7,
@@ -44,11 +44,9 @@ if 'Summary' in df.columns:
     dfFinal = df[["Crs.Code", "Summary", "Cr"]].copy().dropna()
     dfFinal["Puan"] = dfFinal["Summary"].apply(processGrade)
 else:
-    # Sentetik Veri
     id_vars = [col for col in ['Id: ', 'Area: '] if col in df.columns]
     course_cols = [col for col in df.columns if col not in id_vars]
 
-    # Şimdilik sadece Software veya Psychology olan birini seçelim (Kredisi olanlar)
     valid_areas = ["Software", "Psychology"]
     dfFiltered = df[df['Area: '].isin(valid_areas)]
 
@@ -56,7 +54,7 @@ else:
         print("Uyarı: Seçili alanlarda öğrenci bulunamadı!")
         dfOneStudent = df.iloc[[0]]
     else:
-        dfOneStudent = dfFiltered.iloc[[347]]
+        dfOneStudent = dfFiltered.iloc[[5]]
     print(dfOneStudent)
     dfFinal = dfOneStudent.melt(id_vars=id_vars, value_vars=course_cols, var_name='Crs.Code', value_name='NoteValue')
     dfFinal["Summary"] = dfFinal["Crs.Code"]
