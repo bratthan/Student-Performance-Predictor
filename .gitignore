@@ -1,14 +1,12 @@
-# IDE (PyCharm/VS Code) dosyaları
+# IDE Dosyaları
 .idea/
 .vscode/
 
-# Python derleme dosyaları
+# Python Derleme ve Ortam Dosyaları
 __pycache__/
 *.pyc
-
-# İşletim sistemi dosyaları
-.DS_Store
-Thumbs.db
-
 .venv/
-.Student2.csv
+
+# Büyük Veri Dosyaları
+*.csv
+!Student1.csv  # Sadece orijinal transkript kalsın istiyorsan başına ! koyabilirsin
